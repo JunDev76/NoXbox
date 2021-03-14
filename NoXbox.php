@@ -37,7 +37,7 @@ class NoXbox extends PluginBase implements Listener{
         $this->pk[] = $add;
 
         $add->type = PlayerListPacket::TYPE_ADD;
-        $add->entries = [PlayerListEntry::createAdditionEntry($player->getUniqueId(), $player->getId(), $player->getName(), SkinAdapterSingleton::get()->toSkinData($player->getSkin()))];
+        $add->entries = [PlayerListEntry::createAdditionEntry($player->getUniqueId(), $player->getId(), $player->getDisplayName(), SkinAdapterSingleton::get()->toSkinData($player->getSkin()))];
         $this->pk[] = $add;
 
         foreach($this->pk as $pk){
